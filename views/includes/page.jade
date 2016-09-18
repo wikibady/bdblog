@@ -1,0 +1,14 @@
+ul.page-ul
+    - for(var i = 1;i<= pageAll;i++)
+        - if(i==page)
+          li(class="current-page")
+            - if (tag)
+              a(href='./?tag=#{tag}&page=#{i}') #{i}
+            - else
+              a(href='./?page=#{i}') #{i}
+        - else
+          li
+              - if (tag)
+                a(href='./?tag=#{tag}&page=#{i}') #{i}
+              - else
+                a(href='./?page=#{i}') #{i}

@@ -1,0 +1,40 @@
+extends layout
+
+
+
+- var articles = {articles}
+- var hotarticles = {hotarticles}
+- var title = {title}
+block title
+    title #{title}
+    meta(name='title', content=title)
+block content
+
+  div.list-main
+
+    - each article in articles
+      a(href="./query?id=#{article.id}")
+        div(class='article')
+          h5 #{article.title}
+          div(class='all-date') #{article.date}
+          div.summary!=article.summary
+          div.tags
+            - each tag in article.tags
+             span.tag #{tag}
+    block page
+      include includes/page
+
+block sidebar
+    div.side
+        div.aliyun
+            a(href='https://www.aliyun.com/product/ecs?spm=5176.8060947.416540.23.yDw80m')
+                img(src='http://7pumi0.com1.z0.glb.clouddn.com/b3c7a061489b158c85c4141b17bdc55e.jpg')
+                span 独享优惠码 5tzk1m
+        div.hot-rock
+            div.hot-text 大家在看
+            - each article in hotarticles
+              a(href="./query?id=#{article.id}")
+                div(class='article hot')
+                  span.track #{article.track}
+                  h6 #{article.title}
+                  div(class='all-date') #{article.date}

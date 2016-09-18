@@ -1,0 +1,49 @@
+extends layout
+
+block content
+    h1 新建博文
+
+    form(method='post', action='/addArticle',id='mdcode')
+        div.form-row
+            label
+                span 题目:
+                input(type='text',name='title',class="form-title")
+        div.form-row
+            label
+                span 正文:
+                textarea(type='text',name='md',id='content',class="form-body")
+        div(class="form-row" style="display:none")
+            label
+                span 正文:
+                textarea(type='text',name='body',id='body-view')
+        div.form-row
+            label
+                span 出版时间:
+                input(type='date',name='published',onclick="javascript:published.value=new Date().toLocaleString()")
+        div.form-row
+            label
+                span 标签:
+                input(type='text',name='tags',class="form-tags")
+        div.form-row
+            label
+                span summary:
+                input(type='text',name='summary',class="form-summary")
+        div.form-row
+            label
+                span description:
+                textarea(type='text',name='description',class="form-body")
+
+        div.form-row
+            label
+                span keywords:
+                input(type='text',name='keywords',class="form-tags")
+
+        div.form-row
+            input(type='submit')
+    div(id="view")
+    script(src='./javascripts/marked.min.js')
+    script.
+        var content = document.getElementById('content');
+        var view = document.getElementById('view');
+        var body = document.getElementById('body-view');
+        setInterval("view.innerHTML=(marked(content.value));body.value=(marked(content.value))",500);
