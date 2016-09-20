@@ -5,7 +5,9 @@
   "scripts": {
     "start": "supervisor ./bin/www",
     "run": "supervisor ./bin/www",
-    "send":"scp -r ../demoApp root@139.129.36.176:/home/bdblog" 
+    "send":"scp -r ../demoApp root@139.129.36.176:/home/bdblog" ,
+    "static": "scp -r public  root@139.129.36.176:/home/bdblog/demoApp",
+    "views": "scp -r views  root@139.129.36.176:/home/bdblog/demoApp"
  },
   "dependencies": {
     "body-parser": "~1.12.0",

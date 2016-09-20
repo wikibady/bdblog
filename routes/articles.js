@@ -54,11 +54,6 @@ router.post('/updateArticle', function(req, res, next) {
 router.post('/addArticle', function(req, res, next) {
     articleDao.add(req, res, next);
 });
-
-router.get('/md', function(req, res, next) {
-  //res.send('respond with a resource');
-    res.render('md');
-});
 router.get('/*', function(req, res) {
   //res.send('respond with a resource');
     res.render('404');

@@ -391,6 +391,31 @@ p img{
     -o-transform:rotate(-90deg); 	/* Opera */
     z-index:9999;
 }
+.p404{
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+.p404text{
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    line-height: 400px;
+    font-size: 3rem;
+    color: #fff;
+    font-weight: 500;
+    text-shadow: 10px 10px 30px rgb(123,22,222);
+    animation: color404 1s infinite ease-in-out;
+    -moz-animation: color404 1s infinite ease-in-out;	/* Firefox */
+    -webkit-animation: color404 1s infinite ease-in-out;	/* Safari 和 Chrome */
+    -o-animation: color404 1s infinite ease-in-out;	/* Opera */
+    z-index: 999;
+}
+.leave{
+    position: absolute;
+    color: #006666;
+    z-index: 1;
+}
 @media screen and (max-width: 600px ){
     .list-main{
         width: 100%;
@@ -530,5 +555,80 @@ p img{
     to {
         bottom: 0px;
         opacity: 0.8;
+    }
+}
+@keyframes color404
+{
+    0% {
+        text-shadow: 10px 10px 30px rgb(123,22,222);
+    }
+    25% {
+        text-shadow: 30px 30px 30px rgb(255,22,222);
+    }
+    50% {
+        text-shadow: 10px 30px 30px rgb(123,22,222);
+    }
+    75% {
+        text-shadow: -30px 10px 30px rgb(255,22,222);
+    }
+    100% {
+        text-shadow: 10px 10px 30px rgb(123,22,222);
+    }
+}
+
+@-moz-keyframes color404 /* Firefox */
+{
+    0% {
+        text-shadow: 10px 10px 30px rgb(123,22,222);
+    }
+    25% {
+        text-shadow: 30px 30px 30px rgb(255,22,222);
+    }
+    50% {
+        text-shadow: 10px 30px 30px rgb(123,22,222);
+    }
+    75% {
+        text-shadow: -30px 10px 30px rgb(255,22,222);
+    }
+    100% {
+        text-shadow: 10px 10px 30px rgb(123,22,222);
+    }
+}
+
+@-webkit-keyframes color404 /* Safari 和 Chrome */
+{
+    0% {
+        text-shadow: 10px 10px 30px rgb(123,22,222);
+    }
+    25% {
+        text-shadow: 30px 30px 30px rgb(255,22,222);
+    }
+    50% {
+        text-shadow: 10px 30px 30px rgb(123,22,222);
+    }
+    75% {
+        text-shadow: -30px 10px 30px rgb(255,22,222);
+    }
+    100% {
+        text-shadow: 10px 10px 30px rgb(123,22,222);
+    }
+}
+
+@-o-keyframes color404 /* Opera */
+{
+    0% {
+        text-shadow: 10px 10px 30px rgb(123,22,222);
+    }
+    25% {
+        text-shadow: 30px 30px 30px rgb(255,22,222);
+    }
+    50% {
+        text-shadow: 10px 30px 30px rgb(123,22,222);
+    }
+    75% {
+        text-shadow: -30px 10px 30px rgb(255,22,222);
+    }
+    100% {
+        text-shadow: 10px 10px 30px rgb(123,22,222);
     }
 }
